@@ -11,9 +11,7 @@ CREATE TABLE Prodotto (
     Nome varchar(50) NOT NULL,
     Descrizione varchar(255)NOT NULL,
     Prezzo double(25)NOT NULL,
-    Giacenza int(20)NOT NULL
-    IDCategoria int NOT NULL,
-    FOREIGN KEY(IDCategoria) REFERENCES categoria(ID)
+    Giacenza int(20)NOT NULL    
 
 )
 
