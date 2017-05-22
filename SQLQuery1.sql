@@ -53,3 +53,32 @@ CREATE TABLE Indirizzo (
 )
 go
 
+CREATE TABLE Ordine (
+    ID int PRIMARY KEY identity(1,1),
+    Data datetime NOT NULL,
+    IDCliente int NOT NULL,
+    FOREIGN KEY(IDCliente) REFERENCES Cliente(ID)
+	
+)
+go
+
+CREATE TABLE Stato (
+    ID int PRIMARY KEY identity(1,1),
+    Nome varchar(26) NOT NULL,
+	IDOrdine int NOT NULL,
+	FOREIGN KEY (IDOrdine) REFERENCES Ordine(ID)
+)
+go
+
+CREATE TABLE DettaglioOrdine(
+	ID int PRIMARY KEY identity(1,1),
+	Quantità int NOT NULL,
+	IDOrdine int NOT NULL,
+	IDProdotto int NOT NULL,
+	FOREIGN KEY(IDProdotto) REFERENCES Prodotto(ID),
+	FOREIGN KEY (IDOrdine) REFERENCES Ordine(ID)
+)
+go
+
+
+
